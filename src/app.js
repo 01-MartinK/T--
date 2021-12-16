@@ -54,11 +54,12 @@ function refresh_data(){
     // COLORIZATION
     var item_list = ["#last-price","#current-price","#next-price","#next-next-price","#next-next-next-price"]
     for(let i = 0; i<item_list.length;i++){
-        if (getHourPrice(getCurrentHour()+i-1) < getHourPrice(getCurrentHour()+i-2)){
+        if (getHourPrice(getCurrentHour()+i-2) > getHourPrice(getCurrentHour()+i-3)){
             doc.querySelector(item_list[i]).className = "hind-kallim"
         }else{
             doc.querySelector(item_list[i]).className = "hind-odavam"
         }     
+        
         console.log(i)
         console.log(getHourPrice(getCurrentHour()+i-2))
         console.log(getHourPrice(getCurrentHour()+i-1))

@@ -9,8 +9,8 @@ device_creation_button.addEventListener('click',CreateDevice)
 
 // CREATE DEVICE
 function CreateDevice(){
-    const name = doc.querySelector("#device-name-input").value
-    const kulu = doc.querySelector("#device-cost-input").value
+    const name = document.querySelector("#device-name-input").value
+    const kulu = document.querySelector("#device-cost-input").value
 
     if (name !== "" && kulu !== null){
         AddDeviceToList(name,kulu)

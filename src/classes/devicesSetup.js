@@ -4,8 +4,8 @@ let kodu_masinad = []
 AddDeviceToList("ahi",120)
 AddDeviceToList("külmik",300)
 
-const device_creation_button = doc.querySelector("#submit-device-creation")
-device_creation_button.addEventListener('click',CreateDevice)
+//const device_creation_button = document.querySelector("#submit-device-creation")
+//device_creation_button.addEventListener('click',CreateDevice)
 
 // CREATE DEVICE
 function CreateDevice(){

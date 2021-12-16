@@ -6,6 +6,16 @@ function arrayRemove(arr, value) {
     });
 }
 
+// GET AVG OF ARRAY OR INT OF FLOAT OR DOUBLE
+function avg(list = []){
+    let b = 0
+    for(let i = 0;i<list.length;i++){
+        b += list[i].price
+    }
+    b = b/list.length
+    return b
+}
+
 // GET CURRENT HOUR
 function getCurrentHour(){
     const d = new Date();
@@ -21,6 +31,7 @@ function getCurrentTime(){
 // CURRENT TIKING TIME
 var span = document.getElementById('#live-clock');
 
+// CLOCK FUNCTION
 window.onload = displayClock();
 function displayClock(){
   var display = new Date().toLocaleTimeString();

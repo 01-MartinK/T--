@@ -30,13 +30,6 @@ function getKoguKoduElektriKulu(){
     return kulu;
 }
 
-function arrayRemove(arr, value) { 
-
-    return arr.filter(function(ele){ 
-        return ele.name != value; 
-    });
-}
-
 function getKoguKoduElektriHind(elektri_kulu){
     return elektri_kulu * borsiElektriHind;
 }
@@ -51,6 +44,7 @@ function CreateDevice(){
     }else{
         console.log("error")
     }
+    reshesh_data()
 }
 
 function AddDeviceToList(name,kulu=0){
@@ -61,6 +55,7 @@ function AddDeviceToList(name,kulu=0){
 const kodu_elektri_text = doc.querySelector("#kodu-elektri-kulu")
 const kodu_elektri_hind_text = doc.querySelector("#borsi-hinna-text")
 const borsi_text = doc.querySelector("#kodu-elektri-hind")
+document.querySelector("#kellaaeg").innerHTML = getCurrentTime()
 
 reshesh_data()
 UI.updateDeviceList(kodu_masinad)
@@ -74,5 +69,6 @@ function reshesh_data(){
 function deleteShit(item){
     const device_cont = document.querySelector("#device-container")
     device_cont.removeChild(item.parentElement);
-    kodu_masinad = arrayRemove(kodu_masinad, deletable.getParent.id);
+    kodu_masinad = arrayRemove(kodu_masinad, item.id);
+    reshesh_data()
 }

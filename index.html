@@ -8,37 +8,43 @@
         <link rel="stylesheet" href="src/master.css">
         <link rel="manifest" href="manifest.json">
         <link rel="apple-touch-icon" href="images/icon192.png">
+        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+        <script>
+          window.OneSignal = window.OneSignal || [];
+          OneSignal.push(function() {
+            OneSignal.init({
+              appId: "adacba74-9a39-441a-9c0a-952fbe336ec0",
+              safari_web_id: "",
+              notifyButton: {
+                enable: true,
+              },
+            });
+          });
+        </script>
     </head>
     <body>
+      <!-- Simple example shit-->
         <h3>Simple web app Example</h3>
         <p id="test">test data</p>
-        <button id="test">Test</button>
+        <h3 id="borsi-hinna-text">a</h3>
+        <h3 id="kodu-elektri-kulu">b</h3>
+        <h3 id="kodu-elektri-hind">c</h3>
+        <button id="test">REFRESH</button>
+
+        <!-- Device Creation-->
+        <div>
+          <h3>Device Add Section</h3>
+          <form>
+            <label>Seadme Nimi</label>
+            <input id="device-name-input" type="text" placeholder="???€">
+            <label>Seadme Elektrikulu</label>
+            <input id="device-cost-input" type="text" placeholder="???KW">
+          </form>
+        </div>
+
+        <!-- Scripts -->
+        <script src="src/classes/seade.js"></script>
         <script src="src/app.js"></script>
     </body>
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-      
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-          apiKey: "AIzaSyCqi8tMNEUaXp0bg72J0cWzblnZelbqlRY",
-          authDomain: "code-monkeys-voco.firebaseapp.com",
-          projectId: "code-monkeys-voco",
-          storageBucket: "code-monkeys-voco.appspot.com",
-          messagingSenderId: "67053600980",
-          appId: "1:67053600980:web:16da928ac33e40982dfb41",
-          measurementId: "G-ZV2VM1BYJG"
-        };
-      
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-      </script>
-      <script src="src/classes/seade.js"></script>
-      <script src="src/app.js"></script>
-      <script src="src/app.js"></script>
 </html>
+

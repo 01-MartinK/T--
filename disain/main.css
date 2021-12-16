@@ -5,9 +5,19 @@
 
 body {
     background-color: var(--primary-color);
+    max-height: 100vh;
 }
 
-div {
+.back-img {
+    position: absolute;
+    max-height: 100vh;
+    left: -150px;
+    top: 0%;
+    clip-path: polygon(0 0, 25% 0, 100% 100%, 0% 100%);
+    -webkit-clip-path: polygon(0 0, 25% 0, 100% 100%, 0% 100%);
+}
+
+.pg-text {
     color: var(--secondary-color);
 }
 
@@ -20,10 +30,17 @@ h1 {
     color: #000;
     padding: 10px 18px;
     border-radius: 20px;
+    font-weight: 700;
 }
 
-.taustapilt {
-    align-content: left;
+.acs-button {
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    margin: 1rem 1rem;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 /*

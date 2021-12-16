@@ -1,4 +1,4 @@
-var data = (
+var data;
 const fs = require("fs")
 
 var heaterId = 20
@@ -38,4 +38,3 @@ query devices where setup.max limit has not been set: "/devices?!setup.max"
 				})
 			])
 	});
-)

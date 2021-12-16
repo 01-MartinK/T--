@@ -28,6 +28,12 @@ function getCurrentTime(){
     return d.getTime();
 }
 
+// GET CURRENT DAY
+function getCurrentDay(){
+    const d = new Date();
+    return d.getTime();
+}
+
 // CURRENT TIKING TIME
 var span = document.getElementById('#live-clock');
 
@@ -36,6 +42,6 @@ window.onload = displayClock();
 function displayClock(){
   var display = new Date().toLocaleTimeString();
   var date = new Date()
-  document.querySelector("#live-clock").innerHTML = date.getDay()+"."+date.getMonth()+"."+date.getUTCFullYear()+" | "+display;
+  document.querySelector("#live-clock").innerHTML = date.getDate()+"."+(date.getMonth()+1)+"."+date.getUTCFullYear()+" | "+display;
   setTimeout(displayClock, 1000); 
 }

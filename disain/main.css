@@ -25,11 +25,9 @@ body {
 }
 
 .kell {
-    display: inline-block;
-    position: absolute;
     color: white;
     font-weight: lighter;
-    margin-left: 15px;
+    margin-right: 2em;
 }
 
 .pg-text {
@@ -109,7 +107,7 @@ body {
 
 .back-btn {
 	position: absolute;
-	bottom: 0%;
+    top: 20px;
 }
 
 .underline {
@@ -118,7 +116,7 @@ body {
 }
 
 .keskmine-hind {
-    
+    color: var(--tertiary-color);
 }
 
 .seadme-pilt {

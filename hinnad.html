@@ -17,19 +17,18 @@
         </div>
         
         <div class="row pg-text">
+            <!-- Back button -->
             <div class="col s4 left-align">
-                <!-- Show current date and time -->
-                <h4 id="live-clock" class="kell"></h4>
                 <a href="index.html" class="app-button back-btn">Tagasi</a>
             </div>
             <!-- Electricity stock prices -->
             <div class="col s4 center-align borsi-text">
                 <img src="./disain/pics/logo.png" class="logo center-align logo-hind">
                 <H1>ELEKTRIHINNAD</H1>
-                <!-- Price one hour ago -->
-                <div class="kell-hind">
-                    <h4 id="current-time">Kell 09:00</h4>
-                    <h4 id="last-price">195.6€ / MWh</h4>
+                <!-- Average price -->
+                <div class="kell-hind keskmine-hind">
+                    <h2>KESKMINE HIND</h2>
+                    <h2 id="avg-price">169.35 €</h2>
                 </div>
                 <!-- Price now -->
                 <div class="hind-odavam hind-praegu">
@@ -51,12 +50,10 @@
                     <h4 id="third-time-markin">Kell 13:00</h4>
                     <h4 id="next-next-next-price">137.4€ / MWh</h4>
                 </div>
-                <!-- Refresh prices button -->
-                <button class="app-button" onclick="refresh_data()">Uuenda</button>
             </div>
-            <div class="col s4 center-align keskmine-hind">
-                <h2>KESKMINE HIND</h2>
-                <h2 id="avg-price">169.35 €</h2>
+            <!-- Show current date and time -->
+            <div class="col s4 right-align">
+                <h4 id="live-clock" class="kell"></h4>
             </div>
         </div>
     </body>

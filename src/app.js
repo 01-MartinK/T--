@@ -9,11 +9,18 @@ if ("serviceWorker" in navigator) {
     });
 }
 
-const UI = new UIManager();
+// INITIALIZATION
 const doc = document;
-let borsiElektriHind = 300
+const UI = new UIManager();
+
+//EVENT LISTENERS
+const device_creation_button = doc.querySelector("#submit-device-creation")
+device_creation_button.addEventListener('click',CreateDevice)
+
+let borsiElektriHind = 30
 let kodu_masinad = []
-createNewDevice("ahi",120)
+AddDeviceToList("ahi",120)
+AddDeviceToList("külmik",300)
 
 function getKoguKoduElektriKulu(){
     let kulu = 0;
@@ -23,11 +30,30 @@ function getKoguKoduElektriKulu(){
     return kulu;
 }
 
+function arrayRemove(arr, value) { 
+
+    return arr.filter(function(ele){ 
+        return ele.name != value; 
+    });
+}
+
 function getKoguKoduElektriHind(elektri_kulu){
     return elektri_kulu * borsiElektriHind;
 }
 
-function createNewDevice(name="",kulu=0){
+function CreateDevice(){
+    const name = doc.querySelector("#device-name-input").value
+    const kulu = doc.querySelector("#device-cost-input").value
+
+    if (name !== "" && kulu !== null){
+        AddDeviceToList(name,kulu)
+        UI.updateDeviceList(kodu_masinad)
+    }else{
+        console.log("error")
+    }
+}
+
+function AddDeviceToList(name,kulu=0){
     const b = new Seade(name,kulu)
     kodu_masinad.push(b)
 }
@@ -43,4 +69,10 @@ function reshesh_data(){
     kodu_elektri_text.innerHTML = getKoguKoduElektriKulu()+"KW"
     kodu_elektri_hind_text.innerHTML = getKoguKoduElektriHind(getKoguKoduElektriKulu())+"€"
     borsi_text.innerHTML = borsiElektriHind+"€"
+}
+
+function deleteShit(item){
+    const device_cont = document.querySelector("#device-container")
+    device_cont.removeChild(item.parentElement);
+    kodu_masinad = arrayRemove(kodu_masinad, deletable.getParent.id);
 }

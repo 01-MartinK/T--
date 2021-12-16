@@ -20,14 +20,6 @@ const device_creation_button = doc.querySelector("#submit-device-creation")
 device_creation_button.addEventListener('click',CreateDevice)
 
 // GETTING MARKET DATA
-let borsiElektriHind = 30
-fetch('https://dashboard.elering.ee/api/nps/price/EE/current')
-  .then(response => response.json())
-  .then(data => {
-      //console.log(data.data[0].price)      
-      borsiElektriHind = data.data[0].price
-  });
-
 let kodu_masinad = []
 AddDeviceToList("ahi",120)
 AddDeviceToList("külmik",300)
@@ -71,6 +63,7 @@ reshesh_data()
 UI.updateDeviceList(kodu_masinad)
 
 function reshesh_data(){
+    getCurrentPrice()
     kodu_elektri_text.innerHTML = getKoguKoduElektriKulu()+"KW"
     kodu_elektri_hind_text.innerHTML = getKoguKoduElektriHind(getKoguKoduElektriKulu())+"€"
     borsi_text.innerHTML = borsiElektriHind+"€"

@@ -62,4 +62,14 @@
     <script src="src/classes/UI.js"></script>
     <script src="src/app.js"></script>
     <script src="oneSignal.js"></script>
+    <!-- Notification system SDK and initialization -->
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    <script>
+      window.OneSignal = window.OneSignal || [];
+      OneSignal.push(function() {
+        OneSignal.init({
+          appId: "adacba74-9a39-441a-9c0a-952fbe336ec0",
+        });
+      });
+    </script>
 </html>

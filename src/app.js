@@ -45,6 +45,7 @@ function refresh_data(){
     const next_next_price = doc.querySelector("#next-next-price")
     const next_next_next_price = doc.querySelector("#next-next-next-price")
 
+    // PRICE UPDATE AND SET
     last_price.innerHTML = getHourPrice(getCurrentHour()-2)+" / MWh"
     current_price.innerHTML = getHourPrice(getCurrentHour()-1)+" / MWh"
     next_price.innerHTML = getHourPrice(getCurrentHour())+" / MWh"
@@ -56,14 +57,11 @@ function refresh_data(){
     for(let i = 0; i<item_list.length;i++){
         if (getHourPrice(getCurrentHour()+i-2) > getHourPrice(getCurrentHour()+i-3)){
             doc.querySelector(item_list[i]).className = "hind-kallim"
+            doc.querySelector(item_list[i]).innerHTML += '<i class="small material-icons">arrow_drop_up</i>'
         }else{
             doc.querySelector(item_list[i]).className = "hind-odavam"
+            doc.querySelector(item_list[i]).innerHTML += '<i class="small material-icons">arrow_drop_down</i>'
         }     
-        
-        console.log(i)
-        console.log(getHourPrice(getCurrentHour()+i-2))
-        console.log(getHourPrice(getCurrentHour()+i-1))
-        console.log("")
     }
 }
 

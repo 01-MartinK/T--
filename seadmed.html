@@ -17,32 +17,28 @@
                 <img src="disain/pics/logo.png" class="logo center-align logo-hind">
                 <H1>SEADMED</H1>
                 <div class="row">
+                    <!-- Ventilalation Config -->
                     <div class="seade col s2 offset-s3 center-align">
                         <img class="seadme-pilt" src="disain/pics/fan.png">
                         <div class="seadme-text"> Ventilaator </div>
-                        <input class="number-input" type="number" id="quantity" name="quantity" min="1" max="1000000"> 
+                        <input id="vent-int" class="number-input" type="number" id="quantity" name="quantity" min="1" max="1000000"> 
                         <h1 class="small-text">kW/h </h1>
                     </div>
+                    <!-- Radiaator Config -->
                     <div class="seade col s2 center-align">
                         <img class="seadme-pilt" src="disain/pics/radiator.png">
                         <div class="seadme-text"> Radiaator </div>
-                        <input class="number-input" type="number" id="quantity" name="quantity" min="1" max="1000000"> 
+                        <input id="rad-int" class="number-input" type="number" id="quantity" name="quantity" min="1" max="1000000"> 
                         <h1 class="small-text">kW/h </h1> 
                     </div>
+                    <!-- Boiler Config -->
                     <div class="seade col s2 center-align">
                         <img class="seadme-pilt" src="disain/pics/boiler.png">
                         <div class="seadme-text"> Boiler </div>
-                        <input class="number-input" type="number" id="quantity" name="quantity" min="1" max="1000000"> 
+                        <input id="boil-int" class="number-input" type="number" id="quantity" name="quantity" min="1" max="1000000"> 
                         <h1 class="small-text">kW/h </h1>
                     </div>
-                    
-                    
-                    
-                   
-
-
                 </div>
-              
                 <div class="kell-hind">
                     <h4>ELEKTRIKULU kW</h4>
                     <h4 class="kulu"><i class="small material-icons"></i>427 kW</h4>
@@ -57,12 +53,13 @@
                 </div>
             </div>
         </div>
+        <a href="index.html" class="app-button back-btn">Tagasi</a>
     </body>
     <!-- Materialize -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- JS loading -->
     <script src="src/classes/seade.js"></script>
+    <script src="src/classes/devicesSetup.js"></script>
     <script src="src/classes/UI.js"></script>
-    <script src="src/app.js"></script>
     <script src="oneSignal.js"></script>
 </html>

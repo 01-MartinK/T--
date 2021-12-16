@@ -9,6 +9,8 @@ if ("serviceWorker" in navigator) {
     });
 }
 
+
+
 // INITIALIZATION
 const doc = document;
 const UI = new UIManager();
@@ -17,7 +19,15 @@ const UI = new UIManager();
 const device_creation_button = doc.querySelector("#submit-device-creation")
 device_creation_button.addEventListener('click',CreateDevice)
 
+// GETTING MARKET DATA
 let borsiElektriHind = 30
+fetch('https://dashboard.elering.ee/api/nps/price/EE/current')
+  .then(response => response.json())
+  .then(data => {
+      //console.log(data.data[0].price)      
+      borsiElektriHind = data.data[0].price
+  });
+
 let kodu_masinad = []
 AddDeviceToList("ahi",120)
 AddDeviceToList("külmik",300)
@@ -55,7 +65,7 @@ function AddDeviceToList(name,kulu=0){
 const kodu_elektri_text = doc.querySelector("#kodu-elektri-kulu")
 const kodu_elektri_hind_text = doc.querySelector("#borsi-hinna-text")
 const borsi_text = doc.querySelector("#kodu-elektri-hind")
-document.querySelector("#kellaaeg").innerHTML = getCurrentTime()
+document.querySelector("#kellaaeg").innerHTML = getCurrentHour()
 
 reshesh_data()
 UI.updateDeviceList(kodu_masinad)

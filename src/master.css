@@ -4,6 +4,12 @@
 }
 
 .device-slot {
-    box-shadow: 2px 4px 5px black;
+    border: 2px solid black;
+    margin: 0.25em;
     padding: 1em;
+    display: flexbox;
+    flex-direction: column;
+}
+.device-slot a {
+    cursor: pointer;
 }

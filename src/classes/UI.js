@@ -5,9 +5,10 @@ class UIManager {
 
         device_list.forEach(function(device){
             const html = `
-            <div class="device-slot" id="${device.name}">
-                <h3>${device.name}</h3>
+            <div class="device-slot" id="${device.nimi}">
+                <h3>${device.nimi}</h3>
                 <h4>${device.kulu}</h4>
+                <a onclick="deleteShit(this);">X</a>
             </div>
             `
             device_cont.innerHTML += html;

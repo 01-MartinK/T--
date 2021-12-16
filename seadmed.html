@@ -10,9 +10,6 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     </head>
     <body>
-        <div class="container left-align pg-text">
-            
-        </div>
             <div class="col s4 center-align borsi-text">
                 <img src="disain/pics/logo.png" class="logo center-align logo-hind">
                 <H1>SEADMED</H1>
@@ -62,4 +59,14 @@
     <script src="src/classes/UI.js"></script>
     <script src="src/classes/devicesSetup.js"></script>
     <script src="oneSignal.js"></script>
+    <!-- Notification system SDK and initialization -->
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    <script>
+      window.OneSignal = window.OneSignal || [];
+      OneSignal.push(function() {
+        OneSignal.init({
+          appId: "adacba74-9a39-441a-9c0a-952fbe336ec0",
+        });
+      });
+    </script>
 </html>

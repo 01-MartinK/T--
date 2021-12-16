@@ -107,11 +107,42 @@ body {
     color: var(--primary-color);
 }
 
+.back-btn {
+	position: absolute;
+	bottom: 0%;
+}
+
 .underline {
     text-decoration: underline;
     text-decoration-thickness: 3px;
 }
 
+.seadme-pilt {
+    height: 150px;
+    width: 150px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: inset 4px 3px 8px 1px #969696;
+  }
+
+.seadme-text {
+    color:white;
+    font-size: 30px;
+}
+.kulu{
+    color:var(--fail);
+}
+
+.number-input{
+    background-color: white;
+    color: white;
+}
+
+.small-text{
+font-size: medium;
+margin:0;
+}
 @keyframes fadeInAnimation {
     0% {
         opacity: 0;

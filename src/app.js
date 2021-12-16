@@ -1,3 +1,4 @@
+// SERVICE WORKER INITIALIZATION
 if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("src/workers/sw.js").then(registration => {
         console.log("SW Registered");
@@ -8,6 +9,7 @@ if ("serviceWorker" in navigator) {
     });
 }
 
+const UI = new UIManager();
 const doc = document;
 let borsiElektriHind = 300
 let kodu_masinad = []
@@ -34,6 +36,11 @@ const kodu_elektri_text = doc.querySelector("#kodu-elektri-kulu")
 const kodu_elektri_hind_text = doc.querySelector("#borsi-hinna-text")
 const borsi_text = doc.querySelector("#kodu-elektri-hind")
 
-kodu_elektri_text.innerHTML = getKoguKoduElektriKulu()+"KW"
-kodu_elektri_hind_text.innerHTML = getKoguKoduElektriHind(getKoguKoduElektriKulu())+"€"
-borsi_text.innerHTML = borsiElektriHind+"€"
+reshesh_data()
+UI.updateDeviceList(kodu_masinad)
+
+function reshesh_data(){
+    kodu_elektri_text.innerHTML = getKoguKoduElektriKulu()+"KW"
+    kodu_elektri_hind_text.innerHTML = getKoguKoduElektriHind(getKoguKoduElektriKulu())+"€"
+    borsi_text.innerHTML = borsiElektriHind+"€"
+}

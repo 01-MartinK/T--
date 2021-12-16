@@ -1,0 +1,30 @@
+:root {
+    --primary-color: #172A3A;
+    --secondary-color: #09bcba;
+}
+
+body {
+    background-color: var(--primary-color);
+}
+
+div {
+    color: var(--secondary-color);
+}
+
+h1 {
+    padding-top: 4em;
+}
+
+.price-button {
+    background-color: var(--secondary-color);
+    color: #000;
+    padding: 10px 18px;
+    border-radius: 20px;
+}
+
+.taustapilt {
+    align-content: left;
+}
+
+/*
+background-color: #172A3A

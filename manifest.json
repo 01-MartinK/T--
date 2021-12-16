@@ -1,0 +1,30 @@
+{
+    "name": "Simple web app",
+    "short_name": "SWA",
+    "start_url": ".",
+    "background_color": "#b45ac2",
+    "theme_color": "#b12ab4",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "images/icon.png",
+            "sizes": "128x128",
+            "type": "images/png"
+        },
+        {
+            "src": "images/icon256.png",
+            "sizes": "225x225",
+            "type": "images/png"
+        },
+        {
+            "src": "images/icon192.png",
+            "sizes": "192x192",
+            "type": "images/png"
+        },
+        {
+            "src": "images/icon512.png",
+            "sizes": "512x512",
+            "type": "images/png"
+        }
+    ]
+}

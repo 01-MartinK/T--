@@ -12,6 +12,6 @@ window.OneSignal = window.OneSignal || [];
 OneSignal.push(function() {
   OneSignal.init({
     appId: "adacba74-9a39-441a-9c0a-952fbe336ec0",
-    // Your other init settings
+    // Other init setting for future updates
   });
 });

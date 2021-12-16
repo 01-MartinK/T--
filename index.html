@@ -4,47 +4,34 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="theme-color" content="#b12ab4">
-        <title>Web App example</title>
-        <link rel="stylesheet" href="src/master.css">
-        <link rel="manifest" href="manifest.json">
-        <link rel="apple-touch-icon" href="images/icon192.png">
+        <title>Design example</title>
+        <link rel="stylesheet" href="disain/main.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <!-- Notification system SDK and initialization -->
+        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+        <script>
+          window.OneSignal = window.OneSignal || [];
+          OneSignal.push(function() {
+            OneSignal.init({
+              appId: "adacba74-9a39-441a-9c0a-952fbe336ec0",
+            });
+          });
+        </script>
     </head>
     <body>
-
-      <!-- Simple example shit-->
-        <h3>Simple web app Example</h3>
-        <h3 id="borsi-hinna-text">a</h3>
-        <h3 id="kodu-elektri-kulu">b</h3>
-        <h3 id="kodu-elektri-hind">c</h3>
-        <h3 id="kellaaeg"></h3>
-        <button onclick="reshesh_data()">REFRESH</button>
-
-        <!-- Device Creation-->
-        <div>
-          <h3>Device Add Section</h3>
-          <form>
-            <label>Seadme Nimi</label>
-            <input id="device-name-input" type="text" placeholder="???€">
-            <label>Seadme Elektrikulu</label>
-            <input id="device-cost-input" type="text" placeholder="???KW">
-            <input id="submit-device-creation" type="button" value="Add device">
-          </form>
+      <!-- info page -->
+        <div class="container center-align pg-text">
+            <img src="./disain/pics/elekter.jpg" class="back-img">
+            <img src="./disain/pics/logo.png" class="logo">
+            <div class="slogan">
+                <h1>TARBI ROHKEM,</h1>
+                <h1 class="underline"> MAKSA VÄHEM</h1>
+            </div>
+            <a href="hinnad.html" class="app-button">Vaata hindu</a><br>
+            <a href="seadmed.html" class="app-button">Seadmed</a>
         </div>
-
-        <!-- device-list -->
-        <div id="device-container">
-          <div class="device-slot" id="device-name">
-            <h3>Boiler</h3>
-            <h4>12KW</h4>
-            <a>X</a>
-          </div>
-        </div>
-
-        <!-- Scripts -->
-        <script src="src/extras.js"></script>
-        <script src="src/classes/dataGetter.js"></script>
-        <script src="src/classes/seade.js"></script>
-        <script src="src/classes/UI.js"></script>
-        <script src="src/app.js"></script>
     </body>
+    <!-- Materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </html>

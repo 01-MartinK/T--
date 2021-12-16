@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#b12ab4">
+        <title>Design example</title>
+        <link rel="stylesheet" href="disain/main.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    </head>
+    <body>
+        <div class="container left-align pg-text">
+            
+        </div>
+        
+        <div class="row pg-text">
+            <div class="col s4 left-align">
+                <!-- Show current date and time -->
+                <h4 id="live-clock" class="kell"></h4>
+                <a href="index.html" class="app-button back-btn">Tagasi</a>
+            </div>
+            <!-- Electricity stock prices -->
+            <div class="col s4 center-align borsi-text">
+                <img src="./disain/pics/logo.png" class="logo center-align logo-hind">
+                <H1>ELEKTRIHINNAD</H1>
+                <!-- Price one hour ago -->
+                <div class="kell-hind">
+                    <h4 id="current-time">Kell 09:00</h4>
+                    <h4 id="last-price">195.6€ / MWh</h4>
+                </div>
+                <!-- Price now -->
+                <div class="hind-odavam hind-praegu">
+                    <h2>ELEKTRIHIND HETKEL</h2>
+                    <h2 id="current-price">150.1 / MWh</h2>
+                </div>
+                <!-- Price in one hour -->
+                <div class="kell-hind">
+                    <h4 id="first-time-markin">Kell 11:00</h4>
+                    <h4 id="next-price">130.33€ / MWh</h4>
+                </div>
+                <!-- Price in two hours -->
+                <div class="kell-hind">
+                    <h4 id="second-time-markin">Kell 12:00</h4>
+                    <h4 id="next-next-price">135.2€ / MWh</h4>
+                </div>
+                <!-- Price in three hours -->
+                <div class="kell-hind">
+                    <h4 id="third-time-markin">Kell 13:00</h4>
+                    <h4 id="next-next-next-price">137.4€ / MWh</h4>
+                </div>
+                <!-- Refresh prices button -->
+                <button class="app-button" onclick="refresh_data()">Uuenda</button>
+                <a href="index.html" class="app-button back-btn">Tagasi</a>
+            </div>
+        </div>
+    </body>
+    <!-- Materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- JS loading -->
+    <script src="src/extras.js"></script>
+    <script src="src/classes/dataGetter.js"></script>
+    <script src="src/app.js"></script>
+</html>

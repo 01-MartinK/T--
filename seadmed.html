@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#b12ab4">
+        <title>Design example</title>
+        <link rel="stylesheet" href="disain/main.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    </head>
+    <body>
+        <div class="container left-align pg-text">
+            
+        </div>
+            <div class="col s4 center-align borsi-text">
+                <img src="disain/pics/logo.png" class="logo center-align logo-hind">
+                <H1>SEADMED</H1>
+                <div class="row">
+                    <div class="seade col s2 offset-s3 center-align">
+                        <img class="seadme-pilt" src="disain/pics/fan.png">
+                        <div class="seadme-text"> Ventilaator </div>
+                        <input class="number-input" type="number" id="quantity" name="quantity" min="1" max="1000000"> 
+                        <h1 class="small-text">kW/h </h1>
+                    </div>
+                    <div class="seade col s2 center-align">
+                        <img class="seadme-pilt" src="disain/pics/radiator.png">
+                        <div class="seadme-text"> Radiaator </div>
+                        <input class="number-input" type="number" id="quantity" name="quantity" min="1" max="1000000"> 
+                        <h1 class="small-text">kW/h </h1> 
+                    </div>
+                    <div class="seade col s2 center-align">
+                        <img class="seadme-pilt" src="disain/pics/boiler.png">
+                        <div class="seadme-text"> Boiler </div>
+                        <input class="number-input" type="number" id="quantity" name="quantity" min="1" max="1000000"> 
+                        <h1 class="small-text">kW/h </h1>
+                    </div>
+                    
+                    
+                    
+                   
+
+
+                </div>
+              
+                <div class="kell-hind">
+                    <h4>ELEKTRIKULU kW</h4>
+                    <h4 class="kulu"><i class="small material-icons"></i>427 kW</h4>
+                </div>
+                <div class="kell-hind">
+                    <h4>ELEKTRIKULU €</h4>
+                    <h4 class="kulu"><i class="small material-icons"></i>67 €</h4>
+                </div>
+                <div class="kell-hind">
+                    <h4>SÄÄSTETUD €</h4>
+                    <h4 class="kulu"><i class="small material-icons"></i>12 €</h4>
+                </div>
+            </div>
+        </div>
+    </body>
+    <!-- Materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- JS loading -->
+    <script src="src/classes/seade.js"></script>
+    <script src="src/classes/UI.js"></script>
+    <script src="src/app.js"></script>
+    <script src="oneSignal.js"></script>
+</html>

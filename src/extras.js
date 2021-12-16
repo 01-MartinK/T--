@@ -17,3 +17,14 @@ function getCurrentTime(){
     const d = new Date();
     return d.getTime();
 }
+
+// CURRENT TIKING TIME
+var span = document.getElementById('#live-clock');
+
+window.onload = displayClock();
+function displayClock(){
+  var display = new Date().toLocaleTimeString();
+  var date = new Date()
+  document.querySelector("#live-clock").innerHTML = date.getDay()+"."+date.getMonth()+"."+date.getUTCFullYear()+" | "+display;
+  setTimeout(displayClock, 1000); 
+}

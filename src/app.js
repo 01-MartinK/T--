@@ -1,3 +1,7 @@
+for (let i = 0;i<5;i++){
+    console.log("test")
+}
+
 // SERVICE WORKER INITIALIZATION
 if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("src/workers/sw.js").then(registration => {
@@ -9,21 +13,16 @@ if ("serviceWorker" in navigator) {
     });
 }
 
-
-
 // INITIALIZATION
 const doc = document;
-const UI = new UIManager();
+
+//SIMPLE DATA REFRESHING
+doc.querySelector("#current-time").innerHTML = "Kell "+(getCurrentHour()-1)+".00"
+doc.querySelector("#first-time-markin").innerHTML = "Kell "+(getCurrentHour()+1)+".00"
+doc.querySelector("#second-time-markin").innerHTML = "Kell "+(getCurrentHour()+2)+".00"
+doc.querySelector("#third-time-markin").innerHTML = "Kell "+(getCurrentHour()+3)+".00"
 
 //EVENT LISTENERS
-const device_creation_button = doc.querySelector("#submit-device-creation")
-device_creation_button.addEventListener('click',CreateDevice)
-
-// GETTING MARKET DATA
-let kodu_masinad = []
-AddDeviceToList("ahi",120)
-AddDeviceToList("külmik",300)
-
 function getKoguKoduElektriKulu(){
     let kulu = 0;
     kodu_masinad.forEach(function(appliance){
@@ -32,46 +31,38 @@ function getKoguKoduElektriKulu(){
     return kulu;
 }
 
+// FULL USAGE MULTIPLIED BY THE PRICE
 function getKoguKoduElektriHind(elektri_kulu){
     return elektri_kulu * borsiElektriHind;
 }
 
-function CreateDevice(){
-    const name = doc.querySelector("#device-name-input").value
-    const kulu = doc.querySelector("#device-cost-input").value
+addEventListener("getCurrentPrice", refresh_data, getCurrentPrice)
+// UPDATES STOCK PRICE
+function refresh_data(){
+    const last_price = doc.querySelector("#last-price")
+    const current_price = doc.querySelector("#current-price")
+    const next_price = doc.querySelector("#next-price")
+    const next_next_price = doc.querySelector("#next-next-price")
+    const next_next_next_price = doc.querySelector("#next-next-next-price")
 
-    if (name !== "" && kulu !== null){
-        AddDeviceToList(name,kulu)
-        UI.updateDeviceList(kodu_masinad)
-    }else{
-        console.log("error")
+    last_price.innerHTML = getHourPrice(getCurrentHour()-2)+" / MWh"
+    current_price.innerHTML = getHourPrice(getCurrentHour()-1)+" / MWh"
+    next_price.innerHTML = getHourPrice(getCurrentHour())+" / MWh"
+    next_next_price.innerHTML = getHourPrice(getCurrentHour()+1)+" / MWh"
+    next_next_next_price.innerHTML = getHourPrice(getCurrentHour()+2)+" / MWh"
+
+    // COLORIZATION
+    var item_list = ["#last-price","#current-price","#next-price","#next-next-price","#next-next-next-price"]
+    for(let i = 0; i<item_list.length;i++){
+        if (getHourPrice(getCurrentHour()+i-1) < getHourPrice(getCurrentHour()+i-2)){
+            doc.querySelector(item_list[i]).className = "hind-kallim"
+        }else{
+            doc.querySelector(item_list[i]).className = "hind-odavam"
+        }     
+        console.log(i)
+        console.log(getHourPrice(getCurrentHour()+i-2))
+        console.log(getHourPrice(getCurrentHour()+i-1))
+        console.log("")
     }
-    reshesh_data()
 }
 
-function AddDeviceToList(name,kulu=0){
-    const b = new Seade(name,kulu)
-    kodu_masinad.push(b)
-}
-
-const kodu_elektri_text = doc.querySelector("#kodu-elektri-kulu")
-const kodu_elektri_hind_text = doc.querySelector("#borsi-hinna-text")
-const borsi_text = doc.querySelector("#kodu-elektri-hind")
-document.querySelector("#kellaaeg").innerHTML = getCurrentHour()
-
-reshesh_data()
-UI.updateDeviceList(kodu_masinad)
-
-function reshesh_data(){
-    getCurrentPrice()
-    kodu_elektri_text.innerHTML = getKoguKoduElektriKulu()+"KW"
-    kodu_elektri_hind_text.innerHTML = getKoguKoduElektriHind(getKoguKoduElektriKulu())+"€"
-    borsi_text.innerHTML = borsiElektriHind+"€"
-}
-
-function deleteShit(item){
-    const device_cont = document.querySelector("#device-container")
-    device_cont.removeChild(item.parentElement);
-    kodu_masinad = arrayRemove(kodu_masinad, item.id);
-    reshesh_data()
-}

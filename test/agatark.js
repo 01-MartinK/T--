@@ -1,12 +1,10 @@
-<script>
-    var x = document.createElement("INPUT")
-    x.setAttribute("type", "number")
-    Promise
-    .all([
-        api.patch("/devices?id="+heaterId, {
-            "status": {"temperature": 22.3},
-            "setpoint": 22,
-            "setup": {"min":10, "max": 90}
-        }),
-    ])
-</script>
+const { exec } = require('child_process');
+exec('node sample.js c604', {'shell':'powershell.exe'}, (error, stdout, stderr)=> {
+})
+
+Promise
+.all([
+    api.patch("/devices?id="+heaterId, {
+        "setpoint": 25
+    }),
+])

@@ -10,6 +10,7 @@ let kodu_masinad = []
 const device_creation_button = document.querySelector("#submit-device-creation")
 device_creation_button.addEventListener('click',CreateDevice)
 
+
 // CREATE DEVICE
 function CreateDevice(){
     const name = document.querySelector("#device-name-input").value
@@ -29,6 +30,7 @@ function deleteDevice(item){
     const device_cont = document.querySelector(".seadmed")
     device_cont.removeChild(item.parentElement);
     kodu_masinad = arrayRemove(kodu_masinad, item.id);
+    refreshData()
     LS.saveAttributes(kodu_masinad)
 }
 
@@ -36,13 +38,13 @@ function deleteDevice(item){
 function AddDeviceToList(name,kulu=0){
     const b = new Seade(name,kulu)
     kodu_masinad.push(b)
-    refreshDeviceCalculation()
+    refreshData()
     LS.saveAttributes(kodu_masinad)
 }
 
 
-refreshDeviceCalculation()
-function refreshDeviceCalculation(){
+refreshData()
+function refreshData(){
     elektrikulu_text.innerHTML = getKoguKoduElektriKulu()+" kWh"
     elektrikulu_raha.innerHTML = getKoguKoduElektriHind(getKoguKoduElektriKulu())+" €"
 }
@@ -60,6 +62,19 @@ function getKoguKoduElektriHind(elektri_kulu){
     return Math.round(elektri_kulu * (borsiElektriHind / 1000));
 }
 
+
 kodu_masinad = LS.getAttributes('devices');
 UI.updateDeviceList(kodu_masinad);
-refreshDeviceCalculation()
+refreshData()
+
+
+// SÄÄSTUD
+//keskmine if hind < borsiElektriKeskmineHind
+
+/*
+if (hind < borsiElektriKeskmineHind){
+    //säästab
+}else {
+    //ei säästa
+
+}*/

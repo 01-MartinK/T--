@@ -1,3 +1,7 @@
+// SCUFFED
+function refresh_data(){}
+
+// STORAGE MANAGER
 class storageManager {
 	saveAttributes(attributes) {
 		let saveAbleObjects = attributes;

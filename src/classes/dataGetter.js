@@ -18,6 +18,8 @@ function getCurrentPrice(){
 		days_prices = data.data.ee
 		borsiElektriHind = getHourPrice(getCurrentHour()-1)
 		getDayAverage()
+		refresh_data()
+		_callback();
  	});
 }
 

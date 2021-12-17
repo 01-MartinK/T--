@@ -155,6 +155,7 @@ body {
     
     background-color: var(--fail);
     box-shadow: inset 4px 3px 8px 1px var(--fail);
+    cursor: pointer;
   }
 
 .seadme-text {

@@ -17,7 +17,6 @@ doc.querySelector("#first-time-markin").innerHTML = "Kell "+(getCurrentHour()+1)
 doc.querySelector("#second-time-markin").innerHTML = "Kell "+(getCurrentHour()+2)+".00"
 doc.querySelector("#third-time-markin").innerHTML = "Kell "+(getCurrentHour()+3)+".00"
 
-//EVENT LISTENERS
 addEventListener("getCurrentPrice", refresh_data, getCurrentPrice)
 // UPDATES STOCK PRICE
 function refresh_data(){
@@ -52,16 +51,4 @@ function refresh_data(){
         }
     
     }
-}
-
-// CURRENT TIKING TIME
-var span = document.getElementById('#live-clock');
-
-// CLOCK FUNCTION
-window.onload = displayClock();
-function displayClock(){
-var display = new Date().toLocaleTimeString();
-var date = new Date()
-document.querySelector("#live-clock").innerHTML = date.getDate()+"."+(date.getMonth()+1)+"."+date.getUTCFullYear()+" | "+display;
-setTimeout(displayClock, 1000); 
 }

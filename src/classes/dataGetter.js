@@ -19,7 +19,6 @@ function getCurrentPrice(){
 		borsiElektriHind = getHourPrice(getCurrentHour()-1)
 		getDayAverage()
 		refresh_data()
-		_callback();
  	});
 }
 

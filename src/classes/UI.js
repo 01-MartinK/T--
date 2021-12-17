@@ -12,7 +12,7 @@ class UIManager {
             <div class="seade col s2 offset-s1 center-align">
                 <img class="seadme-pilt" id="${device.nimi}" onclick="deleteDevice(this)" src="disain/pics/gear.png">
                 <div class="seadme-text"> ${device.nimi} </div>
-                <p class="seadme-text l">${device.kulu}KWh</p>
+                <p class="seadme-text l">${device.kulu}Wh</p>
             </div>
             `
             device_cont.innerHTML += html;

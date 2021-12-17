@@ -3,6 +3,7 @@ const LS = new storageManager();
 
 const elektrikulu_text = document.querySelector("#elektri-kulu")
 const elektrikulu_raha = document.querySelector("#elektri-hind")
+const avg_hind = document.querySelector("#avg-hind")
 
 let kodu_masinad = []
 // ADD TWO SIMPLE DEVICES
@@ -47,6 +48,7 @@ refreshData()
 function refreshData(){
     elektrikulu_text.innerHTML = getKoguKoduElektriKulu()+" kWh"
     elektrikulu_raha.innerHTML = getKoguKoduElektriHind(getKoguKoduElektriKulu())+" €"
+    avg_hind.innerHTML = calculatesavings()+" €"
 }
 
 function getKoguKoduElektriKulu(){
@@ -62,19 +64,13 @@ function getKoguKoduElektriHind(elektri_kulu){
     return Math.round(elektri_kulu * (borsiElektriHind / 1000));
 }
 
-
 kodu_masinad = LS.getAttributes('devices');
 UI.updateDeviceList(kodu_masinad);
 refreshData()
 
-
-// SÄÄSTUD
-//keskmine if hind < borsiElektriKeskmineHind
-
-/*
-if (hind < borsiElektriKeskmineHind){
-    //säästab
-}else {
-    //ei säästa
-
-}*/
+// SAVINGS
+function calculatesavings(){
+    var hind = getKoguKoduElektriHind(getKoguKoduElektriKulu())
+    var vahe = (borsiElektriKeskmineHind-borsiElektriHind)
+    return Math.round(vahe)
+}

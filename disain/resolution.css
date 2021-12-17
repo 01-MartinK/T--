@@ -5,7 +5,7 @@
         margin-left: 10%;
     }
 }
-/* When screen is smaller than 1000px */
+/* When screen is smaller than 1100px */
 @media only screen and  (max-width: 1100px) {
     .slogan {
         margin-right: 10%;
@@ -19,18 +19,54 @@
     .logo{
         max-width: 30vw;
     }
+   h2{
+    font-size: 35px !important;
+   }
     .kell-hind{
-        font-size: 20px !important;
+        font-size: 35px !important;
     }
-    
+    .hind-kallim {
+        font-size: 35px !important;
+    }
+    .next-price {
+        font-size: 35px !important;
+    }
 }
-/* When screen is smaller than 600px */
+
+@media only screen and  (max-width: 900px) {
+   
+    h2{
+        font-size: 25px !important;
+       }
+    .kell-hind{
+            font-size: 25px !important;
+        }
+    .hind-kallim {
+            font-size: 25px !important;
+        }
+    .next-price {
+            font-size: 25px !important;
+        }
+
+   h4 {
+    font-size: 25px !important;
+   }
+}
+
 @media only screen and  (max-width: 600px) {
    
     .back-img{
         opacity: 0;
     }
     
+    .back-btn {
+        position: relative;
+        text-align: center;
+    }
+
+    #live-clock {
+        display: none;
+    }
 
     .logo{
         max-width: 50vw;

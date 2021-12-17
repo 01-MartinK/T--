@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding:0;
+}
+
 :root {
     --primary-color: #172A3A;
     --secondary-color: #09BC8A;
@@ -14,6 +19,7 @@ body {
     animation-fill-mode: forwards;
 }
 
+/* BACKGROUND IMAGE */
 .back-img {
     position: absolute;
     max-height: 100vh;
@@ -35,6 +41,7 @@ body {
     font-weight: lighter;
 }
 
+/* LOGO STYLING */
 .logo {
     margin-top: 20px;
     max-width: 15vw;
@@ -45,8 +52,9 @@ body {
     margin-top: -10px;
 }
 
+/* SLOGANS */
 .slogan {
-    margin-top: 300px;
+    margin-top: 180px;
     margin-bottom: 50px;
 }
 
@@ -54,6 +62,7 @@ body {
     display: inline;
 }
 
+/* PRICING STYLING */
 .borsi-text {
     margin-top: 30px;
 }
@@ -115,10 +124,12 @@ body {
     text-decoration-thickness: 3px;
 }
 
+/* AVG PRICE*/
 .keskmine-hind {
     color: var(--tertiary-color);
 }
 
+/* DEVICE STYLING */
 .seadme-pilt {
     height: 150px;
     width: 150px;
@@ -152,4 +163,28 @@ margin:0;
     100% {
         opacity: 1;
      }
+}
+
+/* SIZING */
+.xl {
+    font-size: 150%;
+}
+
+.l {
+    font-size: 125%;
+}
+
+.m {
+    font-size: 75%;
+}
+
+.s {
+    font-size: 50%;
+}
+
+/* Feedback */
+.feedback-container{
+    margin: auto auto;
+    margin-top: 25%;
+    width: 50%;
 }

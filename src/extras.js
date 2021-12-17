@@ -31,7 +31,19 @@ function getCurrentTime(){
 // GET CURRENT DAY
 function getCurrentDay(){
     const d = new Date();
-    return d.getTime();
+    return String(d.getDate());
+}
+
+// GET CURRENT MONTH
+function getCurrentMonth(){
+    const d = new Date();
+    return String(d.getMonth()+1);
+}
+
+// GET CURRENT YEAR
+function getCurrentYear(){
+    const d = new Date();
+    return String(d.getUTCFullYear());
 }
 
 // CURRENT TIKING TIME

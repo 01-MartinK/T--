@@ -56,10 +56,13 @@ body {
 .slogan {
     margin-top: 180px;
     margin-bottom: 50px;
+    
 }
 
 .slogan h1 {
     display: inline;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 /* PRICING STYLING */
@@ -103,6 +106,10 @@ body {
     display: inline-block;
     margin-bottom: 30px;
 }
+.app-button:hover{
+    background-color: var(--tertiary-color);
+    transition: 0.25s;
+}
 
 .acs-button {
     position: absolute;
@@ -117,6 +124,7 @@ body {
 .back-btn {
 	position: absolute;
     top: 20px;
+    margin-left: 1em;
 }
 
 .underline {
@@ -130,6 +138,10 @@ body {
 }
 
 /* DEVICE STYLING */
+.seadmed {
+    display: float;
+}
+
 .seadme-pilt {
     height: 150px;
     width: 150px;
@@ -156,14 +168,6 @@ body {
 font-size: medium;
 margin:0;
 }
-@keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-     }
-}
 
 /* SIZING */
 .xl {
@@ -181,10 +185,64 @@ margin:0;
 .s {
     font-size: 50%;
 }
+/* SIZING */
 
 /* Feedback */
 .feedback-container{
     margin: auto auto;
-    margin-top: 25%;
+    padding: 1em;
+    margin-top: 10%;
     width: 50%;
+    text-align: center;
+    color: white;
 }
+
+.feedback-header {
+    text-align: center;
+    color: seashell;
+}
+
+.feedback-container label{
+    margin-top: 0.5em;
+    float: left;
+}
+
+.feedback-container input {
+    color: white;
+}
+
+.feedback-container textarea {
+    height: 6em;
+    color: white;
+}
+
+.mu {
+    margin: 0;
+    margin-top: 2em;
+}
+
+.submit-feedback {
+    background-color: "#412abc";
+}
+
+.animate {
+    animation: typing 0.5s steps(40, end);
+    animation-delay: 2s;
+    
+}
+
+/* Animations */
+@keyframes typing {
+    from { width: 70% }
+    to { width: 100% }
+  }
+  @keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+
+  

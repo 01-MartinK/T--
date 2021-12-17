@@ -7,22 +7,22 @@
     "display": "standalone",
     "icons": [
         {
-            "src": "images/icon.png",
+            "src": "icons/icon.png",
             "sizes": "128x128",
             "type": "images/png"
         },
         {
-            "src": "images/icon256.png",
+            "src": "icons/icon256.png",
             "sizes": "225x225",
             "type": "images/png"
         },
         {
-            "src": "images/icon192.png",
+            "src": "icons/icon192.png",
             "sizes": "192x192",
             "type": "images/png"
         },
         {
-            "src": "images/icon512.png",
+            "src": "icons/icon512.png",
             "sizes": "512x512",
             "type": "images/png"
         }

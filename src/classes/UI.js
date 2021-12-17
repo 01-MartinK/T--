@@ -3,16 +3,16 @@ class UIManager {
 
     // DELETES LAST LIST AND MAKES DEVICES WIA NEW LIST
     updateDeviceList(device_list = []){
-        const device_cont = document.querySelector("#device-container")
+        const device_cont = document.querySelector(".seadmed")
         device_cont.innerHTML = "";
 
         // FOR EACH DEVICE IN LIST
         device_list.forEach(function(device){
             const html = `
-            <div class="device-slot">
-                <h3>${device.nimi}</h3>
-                <h4>${device.kulu}</h4>
-                <a onclick="deleteDevice(this);" id="${device.nimi}">X</a>
+            <div class="seade col s2 offset-s3 center-align">
+                <img class="seadme-pilt" src="disain/pics/fan.png">
+                <div class="seadme-text"> ${device.nimi} </div>
+                <p class="seadme-text l">${device.kulu}KWh</p>
             </div>
             `
             device_cont.innerHTML += html;

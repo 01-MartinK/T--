@@ -13,24 +13,27 @@
     </head>
     <body>
       <!-- feedback -->
+      <a href="index.html" class="app-button back-btn">Tagasi</a>
+      <h3 class="feedback-header">Tagasiside</h3>
       <div class="feedback-container">
-        <h3>Tagasiside</h3>
         <form>
-            <label>Nimi</label>
-            <input type="text" placeholder="ur name">
-            <label>E-mail</label>
+            <label class="l" >Nimi</label>
+            <input type="text" placeholder="teie nimi">
+            <br>
+            <label class="l" >E-mail</label>
             <input type="text" placeholder="example@gmail.ee">
-            <label>Soovite uuendusi teada</label>
-            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+            <br>
+            <label class="l" >Tagasiside</label>
+            <textarea placeholder="sisestage tagasiside nt mida tahaksite muuta"></textarea>
         </form>
-        <label>Tagasiside</label>
-        <textarea>Lisage Tagasiside</textarea>
+        <button class="app-button m mu">submit feedback</button>
       </div>
     </body>
     <!-- Materialize -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- Notification system SDK and initialization -->
     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    
     <script>
       window.OneSignal = window.OneSignal || [];
       OneSignal.push(function() {

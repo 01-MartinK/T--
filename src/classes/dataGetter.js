@@ -8,8 +8,6 @@ var days_prices = [];
 var date = getCurrentYear()+"-"+getCurrentMonth()+"-"+getCurrentDay()+"T00%3A00%3A00.999Z&end="+getCurrentYear()+"-"+getCurrentMonth()+"-"+getCurrentDay()+"T23%3A59%3A59.999Z";
 var url = "https://dashboard.elering.ee/api/nps/price?start="+date;
 
-console.log(date)
-
 getCurrentPrice()
 // GETTING MARKET DATA
 // GET CURRENT DAY PRICES

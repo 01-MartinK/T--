@@ -12,31 +12,15 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     </head>
     <body>
-            <div class="col s4 center-align borsi-text">
-                <img src="disain/pics/logo.png" class="logo center-align logo-hind">
+        <div class="row">
+            <div class="col s3 container">
+                <a href="index.html" class="app-button back-btn">Tagasi</a>
+            </div>
+            <div class="col s6 center-align borsi-text container">
+                <img src="disain/pics/logo.png" class="logo center-align">
                 <H1>SEADMED</H1>
-                <div class="row">
-                    <!-- Ventilalation Config -->
-                    <div class="seade col s2 offset-s3 center-align">
-                        <img class="seadme-pilt" src="disain/pics/fan.png">
-                        <div class="seadme-text"> Ventilaator </div>
-                        <input id="vent-int" class="number-input" type="number" id="quantity" name="quantity" min="1" max="1000000"> 
-                        <h1 class="small-text">kW/h </h1>
-                    </div>
-                    <!-- Radiaator Config -->
-                    <div class="seade col s2 center-align">
-                        <img class="seadme-pilt" src="disain/pics/radiator.png">
-                        <div class="seadme-text"> Radiaator </div>
-                        <input id="rad-int" class="number-input" type="number" id="quantity" name="quantity" min="1" max="1000000"> 
-                        <h1 class="small-text">kW/h </h1> 
-                    </div>
-                    <!-- Boiler Config -->
-                    <div class="seade col s2 center-align">
-                        <img class="seadme-pilt" src="disain/pics/boiler.png">
-                        <div class="seadme-text"> Boiler </div>
-                        <input id="boil-int" class="number-input" type="number" id="quantity" name="quantity" min="1" max="1000000"> 
-                        <h1 class="small-text">kW/h </h1>
-                    </div>
+                <div class="row seadmed">
+                    
                 </div>
                 <div class="kell-hind">
                     <h4>ELEKTRIKULU kW</h4>
@@ -51,8 +35,21 @@
                     <h4 class="kulu"><i class="small material-icons"></i>12 €</h4>
                 </div>
             </div>
+            <div class="col s3 center-align kell-hind">
+                <div class="card blue-grey darken-1">
+                    <div class="card-content white-text">
+                        <span class="card-title">Seadme lisamine</span>
+                        <form>
+                            <input type="text" id="device-name-input" placeholder="Seadme nimi">
+                            <input type="text" id="device-cost-input" placeholder="Seadme kulu">
+                        </form>
+                    </div>
+                    <div class="card-action">
+                        <button class="app-button" id="submit-device-creation">Lisa</button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <a href="index.html" class="app-button back-btn">Tagasi</a>
     </body>
     <!-- Materialize -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

@@ -19,20 +19,20 @@
             <div class="col s6 center-align borsi-text container">
                 <img src="disain/pics/logo.png" class="logo center-align">
                 <H1>SEADMED</H1>
-                <div class="row seadmed">
-                    
+                <div class="row seadmed center-align">
+
                 </div>
                 <div class="kell-hind">
-                    <h4>ELEKTRIKULU kW</h4>
-                    <h4 class="kulu"><i class="small material-icons"></i>427 kW</h4>
+                    <h4>ELEKTRIKULU kW/h</h4>
+                    <h4 class="kulu" id="elektri-kulu"></h4>
                 </div>
                 <div class="kell-hind">
-                    <h4>ELEKTRIKULU €</h4>
-                    <h4 class="kulu"><i class="small material-icons"></i>67 €</h4>
+                    <h4>ELEKTRIKULU €/h</h4>
+                    <h4 class="kulu" id="elektri-hind" ><i class="small material-icons"></i></h4>
                 </div>
                 <div class="kell-hind">
                     <h4>SÄÄSTETUD €</h4>
-                    <h4 class="kulu"><i class="small material-icons"></i>12 €</h4>
+                    <h4 class="kulu"><i class="small material-icons"></i></h4>
                 </div>
             </div>
             <div class="col s3 center-align kell-hind">
@@ -55,7 +55,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- JS loading -->
     <script src="src/classes/seade.js"></script>
+    <script src="src/classes/LS.js"></script>
+    <script src="src/extras.js"></script>
     <script src="src/classes/UI.js"></script>
+    <script src="src/classes/dataGetter.js"></script>
     <script src="src/classes/devicesSetup.js"></script>
     <script src="oneSignal.js"></script>
     <!-- Notification system SDK and initialization -->

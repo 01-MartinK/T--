@@ -63,6 +63,7 @@ body {
     display: inline;
     overflow: hidden;
     white-space: nowrap;
+    font-weight: lighter !important;
 }
 
 /* PRICING STYLING */
@@ -150,6 +151,11 @@ body {
     display: inline-block;
     box-shadow: inset 4px 3px 8px 1px #969696;
   }
+  .seadme-pilt:hover {
+    
+    background-color: var(--fail);
+    box-shadow: inset 4px 3px 8px 1px var(--fail);
+  }
 
 .seadme-text {
     color:white;
@@ -226,8 +232,9 @@ margin:0;
 }
 
 .animate {
+    
     animation: typing 0.5s steps(40, end);
-    animation-delay: 2s;
+    
     
 }
 

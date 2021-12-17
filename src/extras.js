@@ -45,15 +45,3 @@ function getCurrentYear(){
     const d = new Date();
     return String(d.getUTCFullYear());
 }
-
-// CURRENT TIKING TIME
-var span = document.getElementById('#live-clock');
-
-// CLOCK FUNCTION
-window.onload = displayClock();
-function displayClock(){
-  var display = new Date().toLocaleTimeString();
-  var date = new Date()
-  document.querySelector("#live-clock").innerHTML = date.getDate()+"."+(date.getMonth()+1)+"."+date.getUTCFullYear()+" | "+display;
-  setTimeout(displayClock, 1000); 
-}

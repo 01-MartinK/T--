@@ -9,8 +9,8 @@ class UIManager {
         // FOR EACH DEVICE IN LIST
         device_list.forEach(function(device){
             const html = `
-            <div class="seade col s2 offset-s3 center-align">
-                <img class="seadme-pilt" src="disain/pics/fan.png">
+            <div class="seade col s2 offset-s1 center-align">
+                <img class="seadme-pilt" id="${device.nimi}" onclick="deleteDevice(this)" src="disain/pics/gear.png">
                 <div class="seadme-text"> ${device.nimi} </div>
                 <p class="seadme-text l">${device.kulu}KWh</p>
             </div>

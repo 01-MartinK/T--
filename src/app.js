@@ -18,19 +18,6 @@ doc.querySelector("#second-time-markin").innerHTML = "Kell "+(getCurrentHour()+2
 doc.querySelector("#third-time-markin").innerHTML = "Kell "+(getCurrentHour()+3)+".00"
 
 //EVENT LISTENERS
-function getKoguKoduElektriKulu(){
-    let kulu = 0;
-    kodu_masinad.forEach(function(appliance){
-        kulu += appliance.kulu;
-    })
-    return kulu;
-}
-
-// FULL USAGE MULTIPLIED BY THE PRICE
-function getKoguKoduElektriHind(elektri_kulu){
-    return elektri_kulu * borsiElektriHind;
-}
-
 addEventListener("getCurrentPrice", refresh_data, getCurrentPrice)
 // UPDATES STOCK PRICE
 function refresh_data(){
@@ -67,3 +54,14 @@ function refresh_data(){
     }
 }
 
+// CURRENT TIKING TIME
+var span = document.getElementById('#live-clock');
+
+// CLOCK FUNCTION
+window.onload = displayClock();
+function displayClock(){
+var display = new Date().toLocaleTimeString();
+var date = new Date()
+document.querySelector("#live-clock").innerHTML = date.getDate()+"."+(date.getMonth()+1)+"."+date.getUTCFullYear()+" | "+display;
+setTimeout(displayClock, 1000); 
+}

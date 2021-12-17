@@ -15,10 +15,9 @@ function getCurrentPrice(){
 	fetch(url)
   	.then(response => response.json())
   	.then(data => {
-		  console.log(data)
 		days_prices = data.data.ee
+		borsiElektriHind = getHourPrice(getCurrentHour()-1)
 		getDayAverage()
-		refresh_data()
  	});
 }
 
